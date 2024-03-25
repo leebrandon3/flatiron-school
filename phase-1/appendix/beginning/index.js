@@ -62,12 +62,29 @@ console.log("~~CONTEXT~~");
 console.log("~~ADVANCED ARRAY METHODS~~");
 // `forEach` isn't the only array method out there. Let's learn about a few more!
 // Hint: For the purposes of Phase 2, `filter` and `map` are most relevant.
+const prices = [10, 50, 20, 100]
 // -> array.find() returns the first element that satisfies some condition.
+console.log(prices.find(price => price > 25))
 // -> array.reduce() accumulates a value by applying a function to each element in an array.
+console.log(prices.reduce((sum, price) => sum + price))
 // -> array.filter() returns an array with only the elements that satisfy some condition.
+console.log(prices.filter(price => price < 50))
+
 // -> array.map() returns an array where each element has been transformed in some specified way.
+const doubledPrices = prices.map(price => price * 2)
+console.log(doubledPrices)
 
 // ~ Challenges
 // 1. Write a function that takes an array of sentences and returns only the questions in the list.
 // 2. Write a function that takes an array of lowercased sentences and returns them capitalized.
 const phrases = ["hello, there!", "how are you?", "It's me!"]; // example array for #1 and #2
+
+// Could also use .includes to search through a string for a specified string
+const question = phrases.filter(element => {
+      const length = element.length - 1;
+      return element[length] == "?"
+   })
+console.log(question)
+
+// Challenge 2
+console.log(phrases.map(element => element.slice(0,1).toUpperCase() + element.slice(1)))
