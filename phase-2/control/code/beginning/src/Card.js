@@ -1,11 +1,11 @@
-export default function Card() {
+export default function Card({currentCard, newCard}) {
     return (
         <h2 style={{ padding: "1rem",
                      display: "flex", flexDirection: "column", gap: "12px", alignItems: "center",
-                     border: "solid black", borderRadius: "10px"
+                     border: (currentCard.suit == "Clubs") || (currentCard.suit === "Spades") ? "solid black" : "solid red", borderRadius: "10px"
         }}>
-            Ace of Spades
-            <button>Nah.</button>
+            {`${currentCard.rank} of ${currentCard.suit}`}
+            <button onClick={newCard}>Nah.</button>
         </h2>
     )
   }

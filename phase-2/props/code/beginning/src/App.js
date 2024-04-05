@@ -13,12 +13,36 @@ Core Deliverables
 
 */
 
+import Item from "./Item"
+
 function App() {
+  const items = [
+    {
+      id: 1,
+      name: "Milk Boba",
+      price: 5
+    },
+    {
+      id: 2,
+      name: "Taro Boba",
+      price: 4
+    },
+    {
+      id: 3,
+      name: "Vanilla Boba",
+      price: 6
+    }
+  ]
   return (
     <div>
-      <h1>Sakib's Boba Shop</h1>
+      <h1>Sakib's Boba Shop!</h1>
+      {items.map(element => 
+        <Item e={element}/>
+      )}
     </div>
   )
 }
+
+
 
 export default App;
